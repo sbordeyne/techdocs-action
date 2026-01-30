@@ -1,6 +1,6 @@
 # TechDocs GitHub Action
 
-Generate and publish TechDocs for backstage from a single GitHub action call
+Generate and publish TechDocs for backstage from a single GitHub Action call
 
 ## Usage
 

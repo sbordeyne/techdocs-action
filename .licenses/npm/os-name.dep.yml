@@ -1,0 +1,11 @@
+---
+name: os-name
+version: 1.0.3
+type: npm
+summary: 'Get the name of the current operating system. Example: OS X Mavericks'
+homepage:
+license: mit
+licenses:
+- sources: readme.md
+  text: MIT © [Sindre Sorhus](http://sindresorhus.com)
+notices: []

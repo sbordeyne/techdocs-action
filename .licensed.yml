@@ -11,6 +11,10 @@ allowed:
   - mit
   - cc0-1.0
   - other
+  - unlicense
+  - cc-by-4.0
+  - blueoak-1.0.0
+  - 0bsd
 
 ignored:
   npm:
