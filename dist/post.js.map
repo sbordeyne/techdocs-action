@@ -1,0 +1,1 @@
+{"version":3,"file":"post.js","sources":["../src/post.ts"],"sourcesContent":["/**\n * The entrypoint for the post action. This file simply imports and runs the action's\n * main logic.\n */\nimport { post } from './main.js'\n\n/* istanbul ignore next */\npost()\n"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAGG;AAGH;AACA,IAAI,EAAE"}

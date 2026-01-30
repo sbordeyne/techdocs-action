@@ -1,6 +1,7 @@
 import * as tc from '@actions/tool-cache'
 import * as core from '@actions/core'
 import * as fs from 'fs/promises'
+import * as io from '@actions/io'
 import * as exec from '@actions/exec'
 
 export async function installD2(version: string): Promise<boolean> {
@@ -39,11 +40,25 @@ export async function installPlantUML(version: string): Promise<boolean> {
   return true
 }
 
+export async function makeMkDocsVirtualEnv(): Promise<string> {
+  const venvPath = '../mkdocs-venv'
+  await io.mkdirP(venvPath)
+  const exitCode = await exec.exec(`python3 -m venv ${venvPath}`)
+  if (exitCode !== 0) {
+    throw new Error('Failed to create mkdocs virtual environment')
+  }
+  return venvPath
+}
+
 export async function installMkDocsPlugins(
   plugins: string[]
 ): Promise<boolean> {
+  const venvPath = await makeMkDocsVirtualEnv()
+  core.saveState('MKDOCS_VENV_PATH', venvPath)
   for (const plugin of plugins) {
-    const exitCode = await exec.exec(`python3 -m pip install ${plugin}`)
+    const exitCode = await exec.exec(`python3 -m pip install ${plugin}`, [], {
+      env: { ...process.env, PATH: `${venvPath}/bin:${process.env.PATH}` }
+    })
     if (exitCode !== 0) {
       return false
     }

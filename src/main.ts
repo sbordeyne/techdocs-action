@@ -21,8 +21,8 @@ export async function run(): Promise<void> {
     const storageName = core.getInput('storage-name')
     const sourceDir = core.getInput('source-dir')
     const siteName = core.getInput('site-name') || undefined
-    const shouldInstallD2 = core.getInput('install-d2') === 'true'
-    const shouldInstallPlantUML = core.getInput('install-plantuml') === 'true'
+    const shouldInstallD2 = core.getBooleanInput('install-d2')
+    const shouldInstallPlantUML = core.getBooleanInput('install-plantuml')
     const mkDocsPlugins = core.getMultilineInput('mkdocs-plugins')
     const d2Version = core.getInput('d2-version') || 'latest'
     const plantUMLVersion = core.getInput('plantuml-version') || 'latest'
@@ -54,6 +54,7 @@ export async function run(): Promise<void> {
     // Generate the docs site
     core.info('Generating the docs site...')
     const outputDir = '../techdocs-site'
+    core.saveState('OUTPUT_DIR', outputDir)
     await io.mkdirP(outputDir)
     const generationSuccess = await generate({
       sourceDir,
@@ -85,4 +86,10 @@ export async function run(): Promise<void> {
     // Fail the workflow run if an error occurs
     if (error instanceof Error) core.setFailed(error.message)
   }
+}
+
+export async function post(): Promise<void> {
+  const outputDir = core.getState('OUTPUT_DIR')
+  const mkdocsVenv = core.getState('MKDOCS_VENV_PATH')
+  await Promise.all([io.rmRF(outputDir), io.rmRF(mkdocsVenv)])
 }
