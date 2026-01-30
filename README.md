@@ -78,7 +78,8 @@ jobs:
 
 ### Google GCS
 
-Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` on the step of the workflow
+Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` on the step of the
+workflow
 
 ```yaml
 - name: Generate Google Application Credentials

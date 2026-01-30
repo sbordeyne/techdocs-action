@@ -16,14 +16,19 @@ inputs:
     description: The Backstage name of the entity
     required: true
   publisher-type:
-    description: The TechDocs publisher type to use (e.g., googleGcs, awsS3, azureBlobStorage)
+    description:
+      The TechDocs publisher type to use (e.g., googleGcs, awsS3,
+      azureBlobStorage)
     required: true
   bucket-root-path:
-    description: The root path in the storage bucket where the docs will be published
+    description:
+      The root path in the storage bucket where the docs will be published
     required: false
     default: '.'
   storage-name:
-    description: The name of the storage backend (e.g., GCS bucket name, S3 bucket name, Azure container name)
+    description:
+      The name of the storage backend (e.g., GCS bucket name, S3 bucket name,
+      Azure container name)
     required: true
   install-d2:
     description: Whether to install D2 diagramming tool
@@ -46,15 +51,19 @@ inputs:
     required: false
     default: mkdocs-techdocs-core
   source-dir:
-    description: 'Source directory containing mkdocs.yml and docs/ directory. (default: ".")'
+    description:
+      'Source directory containing mkdocs.yml and docs/ directory. (default:
+      ".")'
     required: false
     default: '.'
   site-name:
-    description: 'The name of the TechDocs site to generate (default: "docs-site")'
+    description:
+      'The name of the TechDocs site to generate (default: "docs-site")'
     required: false
     default: ''
   aws-role-arn:
-    description: 'The ARN of the AWS role to assume for publishing (for awsS3 publisher)'
+    description:
+      'The ARN of the AWS role to assume for publishing (for awsS3 publisher)'
     required: false
     default: ''
   aws-endpoint:
@@ -66,23 +75,29 @@ inputs:
     required: false
     default: ''
   aws-s3-sse:
-    description: 'The AWS S3 server-side encryption method to use (for awsS3 publisher)'
+    description:
+      'The AWS S3 server-side encryption method to use (for awsS3 publisher)'
     required: false
     default: ''
   aws-s3-force-path-style:
-    description: 'Whether to force path style addressing for S3 (for awsS3 publisher)'
+    description:
+      'Whether to force path style addressing for S3 (for awsS3 publisher)'
     required: false
     default: ''
   aws-max-attempts:
-    description: 'The maximum number of attempts for AWS SDK operations (for awsS3 publisher)'
+    description:
+      'The maximum number of attempts for AWS SDK operations (for awsS3
+      publisher)'
     required: false
     default: ''
   azure-storage-account-name:
-    description: 'The Azure Storage account name (for azureBlobStorage publisher)'
+    description:
+      'The Azure Storage account name (for azureBlobStorage publisher)'
     required: false
     default: ''
   azure-storage-account-key:
-    description: 'The Azure Storage account key (for azureBlobStorage publisher)'
+    description:
+      'The Azure Storage account key (for azureBlobStorage publisher)'
     required: false
     default: ''
   openstack-credential-id:
@@ -90,11 +105,13 @@ inputs:
     required: false
     default: ''
   openstack-credential-secret:
-    description: 'The OpenStack credential secret (for openstackSwift publisher)'
+    description:
+      'The OpenStack credential secret (for openstackSwift publisher)'
     required: false
     default: ''
   openstack-auth-url:
-    description: 'The OpenStack authentication URL (for openstackSwift publisher)'
+    description:
+      'The OpenStack authentication URL (for openstackSwift publisher)'
     required: false
     default: ''
   openstack-swift-url:
