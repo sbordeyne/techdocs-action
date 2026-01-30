@@ -1,17 +1,17 @@
 {
-  "name": "typescript-action",
-  "description": "GitHub Actions TypeScript template",
-  "version": "0.0.0",
-  "author": "",
+  "name": "techdocs-action",
+  "description": "A GitHub Action to generate and publish Backstage TechDocs sites",
+  "version": "1.0.0",
+  "author": "sbordeyne",
   "type": "module",
   "private": true,
-  "homepage": "https://github.com/actions/typescript-action",
+  "homepage": "https://github.com/sbordeyne/techdocs-action",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/sbordeyne/techdocs-action.git"
   },
   "bugs": {
-    "url": "https://github.com/actions/typescript-action/issues"
+    "url": "https://github.com/sbordeyne/techdocs-action/issues"
   },
   "keywords": [
     "actions"
@@ -37,7 +37,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.11.1"
+    "@actions/core": "^1.11.1",
+    "@actions/exec": "^3.0.0",
+    "@actions/http-client": "^4.0.0",
+    "@actions/io": "^3.0.2",
+    "@actions/tool-cache": "^4.0.0",
+    "@techdocs/cli": "^1.10.4",
+    "rss-parser": "^3.13.0"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.0",

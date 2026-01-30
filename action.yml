@@ -1,23 +1,106 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
-
-# Add your action's branding here. This will appear on the GitHub Marketplace.
-branding:
-  icon: heart
-  color: red
+name: TechDocs Action
+description: A GitHub Action to generate and publish Backstage TechDocs sites
+author: sbordeyne
 
 # Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
+  namespace:
+    description: The Backstage namespace of the entity
+    required: false
+    default: default
+  kind:
+    description: The Backstage kind of the entity
+    required: false
+    default: Component
+  name:
+    description: The Backstage name of the entity
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: Your output description here
+  publisher-type:
+    description: The TechDocs publisher type to use (e.g., googleGcs, awsS3, azureBlobStorage)
+    required: true
+  bucket-root-path:
+    description: The root path in the storage bucket where the docs will be published
+    required: false
+    default: '.'
+  storage-name:
+    description: The name of the storage backend (e.g., GCS bucket name, S3 bucket name, Azure container name)
+    required: true
+  install-d2:
+    description: Whether to install D2 diagramming tool
+    required: false
+    default: 'false'
+  d2-version:
+    description: The version of D2 to install
+    required: false
+    default: 'latest'
+  install-plantuml:
+    description: Whether to install PlantUML diagramming tool
+    required: false
+    default: 'false'
+  plantuml-version:
+    description: The version of PlantUML to install
+    required: false
+    default: 'latest'
+  mkdocs-plugins:
+    description: A newline-separated list of mkdocs plugins to install
+    required: false
+    default: mkdocs-techdocs-core
+  source-dir:
+    description: 'Source directory containing mkdocs.yml and docs/ directory. (default: ".")'
+    required: false
+    default: '.'
+  site-name:
+    description: 'The name of the TechDocs site to generate (default: "docs-site")'
+    required: false
+    default: ''
+  aws-role-arn:
+    description: 'The ARN of the AWS role to assume for publishing (for awsS3 publisher)'
+    required: false
+    default: ''
+  aws-endpoint:
+    description: 'The AWS endpoint to use (for awsS3 publisher)'
+    required: false
+    default: ''
+  aws-proxy:
+    description: 'The AWS proxy to use (for awsS3 publisher)'
+    required: false
+    default: ''
+  aws-s3-sse:
+    description: 'The AWS S3 server-side encryption method to use (for awsS3 publisher)'
+    required: false
+    default: ''
+  aws-s3-force-path-style:
+    description: 'Whether to force path style addressing for S3 (for awsS3 publisher)'
+    required: false
+    default: ''
+  aws-max-attempts:
+    description: 'The maximum number of attempts for AWS SDK operations (for awsS3 publisher)'
+    required: false
+    default: ''
+  azure-storage-account-name:
+    description: 'The Azure Storage account name (for azureBlobStorage publisher)'
+    required: false
+    default: ''
+  azure-storage-account-key:
+    description: 'The Azure Storage account key (for azureBlobStorage publisher)'
+    required: false
+    default: ''
+  openstack-credential-id:
+    description: 'The OpenStack credential ID (for openstackSwift publisher)'
+    required: false
+    default: ''
+  openstack-credential-secret:
+    description: 'The OpenStack credential secret (for openstackSwift publisher)'
+    required: false
+    default: ''
+  openstack-auth-url:
+    description: 'The OpenStack authentication URL (for openstackSwift publisher)'
+    required: false
+    default: ''
+  openstack-swift-url:
+    description: 'The OpenStack Swift URL (for openstackSwift publisher)'
+    required: false
+    default: ''
 
 runs:
   using: node24
