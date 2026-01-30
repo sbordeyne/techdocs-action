@@ -1,10 +1,10 @@
-# TechDocs Github Action
+# TechDocs GitHub Action
 
-Generate and publish TechDocs for backstage from a single github action call
+Generate and publish TechDocs for backstage from a single GitHub action call
 
 ## Usage
 
-Use it in your github workflows:
+Use it in your GitHub workflows:
 
 ```yaml
 # file://./.github/workflows/techdocs.yaml
