@@ -1,4 +1,4 @@
-import { p as post } from './main-B41xBsMx.js';
+import { p as post } from './main-CAnyMiNd.js';
 import 'os';
 import 'crypto';
 import 'fs';
