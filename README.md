@@ -46,33 +46,33 @@ jobs:
 
 ## Inputs
 
-| Input                       | Required           | Default              | Note                                                        |
-| --------------------------- | ------------------ | -------------------- | ----------------------------------------------------------- |
-| namespace                   | :cross_mark:       | default              |                                                             |
-| kind                        | :cross_mark:       | Component            | Backstage entity kind to use                                |
-| name                        | :green_check_mark: |                      | name of your entity                                         |
-| publisher-type              | :green_check_mark: |                      | can be googleGcs, awsS3, azureBlobStorage or openStackSwift |
-| bucketRootPath              | :cross_mark:       | .                    |                                                             |
-| storage-name                | :green_check_mark: |                      | Name of the bucket                                          |
-| install-d2                  | :cross_mark:       | false                | Whether to install terrastruct/d2                           |
-| d2-version                  | :cross_mark:       | latest               |                                                             |
-| install-plantuml            | :cross_mark:       | false                |                                                             |
-| plantuml-version            | :cross_mark:       | latest               |                                                             |
-| mkdocs-plugins              | :cross_mark:       | mkdocs-techdocs-core | newline-separated list of mkdocs plugins to install         |
-| source-dir                  | :cross_mark:       | .                    | Directory containing mkdocs.yml and docs folder             |
-| site-name                   | :cross_mark:       |                      | The name of the techdocs site if not in mkdocs.yml          |
-| aws-role-arn                | :cross_mark:       |                      |                                                             |
-| aws-endpoint                | :cross_mark:       |                      |                                                             |
-| aws-proxy                   | :cross_mark:       |                      |                                                             |
-| aws-s3-sse                  | :cross_mark:       |                      |                                                             |
-| aws-s3-force-path-style     | :cross_mark:       |                      |                                                             |
-| aws-max-attempts            | :cross_mark:       |                      |                                                             |
-| azure-storage-account-name  | :cross_mark:       |                      |                                                             |
-| azure-storage-account-key   | :cross_mark:       |                      |                                                             |
-| openstack-credential-id     | :cross_mark:       |                      |                                                             |
-| openstack-credential-secret | :cross_mark:       |                      |                                                             |
-| openstack-auth-url          | :cross_mark:       |                      |                                                             |
-| openstack-swift-url         | :cross_mark:       |                      |                                                             |
+| Input                       | Required | Default              | Note                                                        |
+| --------------------------- | -------- | -------------------- | ----------------------------------------------------------- |
+| namespace                   | ❌       | default              |                                                             |
+| kind                        | ❌       | Component            | Backstage entity kind to use                                |
+| name                        | ✅       |                      | name of your entity                                         |
+| publisher-type              | ✅       |                      | can be googleGcs, awsS3, azureBlobStorage or openStackSwift |
+| bucketRootPath              | ❌       | .                    |                                                             |
+| storage-name                | ✅       |                      | Name of the bucket                                          |
+| install-d2                  | ❌       | false                | Whether to install terrastruct/d2                           |
+| d2-version                  | ❌       | latest               |                                                             |
+| install-plantuml            | ❌       | false                |                                                             |
+| plantuml-version            | ❌       | latest               |                                                             |
+| mkdocs-plugins              | ❌       | mkdocs-techdocs-core | newline-separated list of mkdocs plugins to install         |
+| source-dir                  | ❌       | .                    | Directory containing mkdocs.yml and docs folder             |
+| site-name                   | ❌       |                      | The name of the techdocs site if not in mkdocs.yml          |
+| aws-role-arn                | ❌       |                      |                                                             |
+| aws-endpoint                | ❌       |                      |                                                             |
+| aws-proxy                   | ❌       |                      |                                                             |
+| aws-s3-sse                  | ❌       |                      |                                                             |
+| aws-s3-force-path-style     | ❌       |                      |                                                             |
+| aws-max-attempts            | ❌       |                      |                                                             |
+| azure-storage-account-name  | ❌       |                      |                                                             |
+| azure-storage-account-key   | ❌       |                      |                                                             |
+| openstack-credential-id     | ❌       |                      |                                                             |
+| openstack-credential-secret | ❌       |                      |                                                             |
+| openstack-auth-url          | ❌       |                      |                                                             |
+| openstack-swift-url         | ❌       |                      |                                                             |
 
 ## Authenticate to your cloud provider
 
